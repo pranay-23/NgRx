@@ -10,7 +10,6 @@
 
         <div class="tdiv" *ngIf="addBlog">
             <form [formGroup]="blogForm" (ngSubmit)="saveBlog()">
-
                 <mat-form-field class="example-full-width">
                     <mat-label>Title</mat-label>
                     <input matInput formControlName="title">
@@ -33,13 +32,7 @@
 
             </form>
         </div>
-        <!-- <div class="blogList" *ngFor="let item of bloginfo.bloglist">
-            <h2>{{item.title}}</h2>
-            <p>{{item.description}} </p>
-            <button (click)="editBlog(item.id)">Edit</button>
-            <button (click)="delBlog(item.id)">Delete</button>
-        </div>         -->
-
+    
         <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
 
             <ng-container matColumnDef="id">
