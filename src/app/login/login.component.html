@@ -1,0 +1,18 @@
+<div>
+    <h1>Login Page</h1>
+    <form class="example-form">
+        <mat-form-field class="example-full-width ">
+            <mat-label>Enter Username</mat-label>
+            <input type="text" matInput #username required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width ">
+            <mat-label>Enter Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" #password required>
+            <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" (click)="onLogin()">Login</button>
+    </form>
+    
+</div>

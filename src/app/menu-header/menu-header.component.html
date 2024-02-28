@@ -1,0 +1,13 @@
+<mat-toolbar class="navbar" color="primary">
+    <div>
+<button mat-button routerLink="">Home</button>
+<button mat-button routerLink="counter">Counter</button>
+<button mat-button routerLink="blog">Blog</button>
+<button mat-button routerLink="age">Age</button>
+</div>
+<div>
+<button mat-button routerLink="login" *ngIf="!authService.isLogged">Login</button>
+<button mat-button (click)="onLogout()"  routerLink="login" [queryParams]="{logout:true}" *ngIf="authService.isLogged">Logout</button>
+<button mat-button routerLink="signup" *ngIf="!authService.isLogged">Sign Up</button>
+</div>
+</mat-toolbar>

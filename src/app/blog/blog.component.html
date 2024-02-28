@@ -1,0 +1,90 @@
+<div>
+    <h1>Technology Blog</h1>
+    
+    <div *ngIf="!bloginfo.errorMsg">
+        <button mat-raised-button color="primary" (click)="onAdd()">Add Blog</button>
+
+        <div *ngIf="!bloginfo.bloglist.length">
+            <h1>No Blogs found</h1>
+        </div>
+
+        <div class="tdiv" *ngIf="addBlog">
+            <form [formGroup]="blogForm" (ngSubmit)="saveBlog()">
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Title</mat-label>
+                    <input matInput formControlName="title">
+                </mat-form-field>
+                <div class="error" *ngIf="blogForm.get('title').errors?.['required'] && blogForm.get('title').dirty">
+                    <span style="color: red;">Title required</span>
+                </div>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput formControlName="description"></textarea>
+                </mat-form-field>
+                <div class="error" *ngIf="blogForm.get('description').errors?.['required'] && blogForm.get('description').dirty">
+                    <span style="color: red;">Description required</span>
+                </div><br>
+
+                <button mat-raised-button color="primary" type="submit">Save</button>
+                <button mat-raised-button color="warn" type="button" (click)="blogClose()">Close</button>
+
+
+            </form>
+        </div>
+        <!-- <div class="blogList" *ngFor="let item of bloginfo.bloglist">
+            <h2>{{item.title}}</h2>
+            <p>{{item.description}} </p>
+            <button (click)="editBlog(item.id)">Edit</button>
+            <button (click)="delBlog(item.id)">Delete</button>
+        </div>         -->
+
+        <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="id">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef>No.</th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="title">
+                <th mat-header-cell mat-sort-header *matHeaderCellDef>Title</th>
+                <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef> Description</th>
+                <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="edit">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element"> <button mat-fab color="primary"
+                        (click)="editBlog(element.id)"><mat-icon>edit</mat-icon></button> </td>
+            </ng-container>
+
+            <ng-container matColumnDef="delete">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element"> <button mat-fab color="warn"
+                        (click)="delBlog(element.id)"><mat-icon>delete</mat-icon></button> </td>
+            </ng-container>
+
+            <ng-container matColumnDef="view">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element"> <button mat-fab color="basic"
+                        [routerLink]="['/blog/'+(element.id).toString()]"><mat-icon>visibility</mat-icon></button> </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+
+
+    </div>
+
+    <div style="color: red;" *ngIf="bloginfo.errorMsg">
+        <h1>Error Occured</h1>
+        <p>{{bloginfo.errorMsg}}</p>
+    </div>
+</div>

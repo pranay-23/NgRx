@@ -1,0 +1,18 @@
+
+mat-card{
+    margin: 20px;
+    width: 50%;
+    margin: 20px auto;
+}
+
+button{
+    margin: 10px auto;
+    margin-right: 10px;
+}
+
+.done{
+    text-decoration: line-through;
+    background-color: #91CB3E;
+    opacity: 0.5;
+    transition: 0.5s;
+}

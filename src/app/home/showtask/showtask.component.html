@@ -1,0 +1,7 @@
+<mat-card *ngFor="let item of tasks;index as i">
+    <div class="items">
+    <mat-card-content>{{item}} </mat-card-content>
+    <button mat-mini-fab color="primary" (click)="comp(i)"><mat-icon>done</mat-icon></button>
+    <button mat-mini-fab color="warn" (click)="del(i)"><mat-icon>delete</mat-icon></button>
+</div>
+</mat-card>

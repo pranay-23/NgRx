@@ -1,0 +1,8 @@
+a{
+    margin: 10px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}

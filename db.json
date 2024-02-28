@@ -1,0 +1,49 @@
+{
+  "Blogs": [
+    {
+      "id": "1",
+      "title": "Angular",
+      "description": "Provided by Google"
+    },
+    {
+      "id": "2",
+      "title": "React",
+      "description": "Provided by META"
+    },
+    {
+      "id": "3",
+      "title": "DOTNET",
+      "description": "Provided by Microsoft"
+    }
+  ],
+  "Users": [
+    {
+      "id": "1",
+      "name": "Pranay Shah",
+      "username": "ps",
+      "password": "12345",
+      "hasAccess": true
+    },
+    {
+      "id": "2",
+      "name": "Marry Jane",
+      "username": "mj",
+      "password": "12345",
+      "hasAccess": true
+    },
+    {
+      "id": "3",
+      "name": "Mark Vough",
+      "username": "mv",
+      "password": "12345",
+      "hasAccess": false
+    },
+    {
+      "id": "4",
+      "name": "Sarah King",
+      "username": "sk",
+      "password": "12345",
+      "hasAccess": false
+    }
+  ]
+}

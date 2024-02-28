@@ -1,0 +1,28 @@
+
+h1{
+  text-align: center;
+}
+
+.example-form {
+    /* display: flex; */
+    /* flex-direction: column; */
+      min-width: 150px;
+      max-width: 500px;
+      /* align-items: center; */
+      /* justify-content: center; */
+      width: 50%;
+      margin: 0 auto;
+    }
+    
+    .example-full-width {
+      width: 100%;
+    }
+  
+    button{
+      width: 100%;
+    }
+    
+  div{  
+    margin-top: 50px;
+    width: 100%;
+  }

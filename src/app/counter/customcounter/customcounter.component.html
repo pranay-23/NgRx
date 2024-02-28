@@ -1,0 +1,18 @@
+<h1>{{channelName}}</h1>
+
+<mat-form-field>
+<mat-label>Counter Input</mat-label>
+<input matInput type="text" [(ngModel)]="counterInput">
+</mat-form-field>   <br>
+
+<mat-form-field>
+<mat-label>Action Type</mat-label>
+<select matNativeControl [(ngModel)]="actionType">
+    <option value="add">Add</option>
+    <option value="sub">Sub</option>
+</select>
+</mat-form-field>
+<br>
+<div>
+<button mat-raised-button color="primary" (click)="onIncrement()">Proceed</button>
+</div>
